@@ -9,7 +9,7 @@ use serenity::framework::standard::macros::{command, group};
 use serenity::framework::standard::{StandardFramework, CommandResult};
 
 #[group]
-#[commands(plant, cut, leaderboard)]
+#[commands(plant, cut, leaderboard, forest)]
 struct General;
 
 struct Handler;
@@ -46,12 +46,14 @@ async fn main() {
 #[command]
 async fn plant(ctx: &Context, msg: &Message) -> CommandResult {
     msg.channel_id.say(ctx, "1 tree has been planted").await?;
+    println!("!plant");
     Ok(())
 }
 
 #[command]
 async fn cut(ctx: &Context, msg: &Message) -> CommandResult {
     msg.channel_id.say(ctx, "1 tree has been cut").await?;
+    println!("!plant");
     Ok(())
 }
 
@@ -59,7 +61,19 @@ async fn cut(ctx: &Context, msg: &Message) -> CommandResult {
 #[command]
 async fn leaderboard(ctx: &Context, msg: &Message) -> CommandResult {
     msg.channel_id.say(&ctx.http, "1 leoo#3446             (**155**)\n2 EnzoLeDebilo#6159 (**19**)").await?;
+    println!("!plant");
     Ok(())
 }
+
+
+#[command]
+async fn forest(ctx: &Context, msg: &Message) -> CommandResult {
+    msg.channel_id.say(&ctx.http, "https://gaia-bot.com/leoo#3446").await?;
+    println!("!forest");
+    Ok(())
+}
+
+
+
 
 
